@@ -1,0 +1,17 @@
+.total-budget-section{
+    display: flex;
+    height: 150px;
+    background: #000;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.budget{
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 50px;
+    color:white;
+
+
+}

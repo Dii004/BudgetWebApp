@@ -1,0 +1,110 @@
+
+
+  <h1> Pohyby na účte</h1>
+
+<section class="total-budget-section">
+<h2 class="budget" [ngClass]="{ 'red': totalBudget < 0, 'green': totalBudget > 0 }" > Aktuálné peniaze: {{totalBudget}}</h2>
+</section>
+
+<form class="row g-3" #transaktionForm="ngForm" (ngSubmit)="onSubmit()">
+   
+    <div class="col-md-3">
+      <label for="peopleDegree" class="form-label">Suma</label>
+      <input type="number" required class="form-control" id="peopleDegree" name="amount"  [(ngModel)]="transaktion.amount">
+    </div>
+    <div class="col-md-3">
+      <label for="peopleFirstname" class="form-label">Miesto</label>
+      <input type="text" required class="form-control" id="peopleFirstname"  name="location" [(ngModel)]="transaktion.location">
+    </div>
+    <div class="col-md-6">
+        <label for="name"> Kategória pohybu</label>
+
+        
+
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="1" id="flexRadioDefault"  name="category" [(ngModel)]="transaktion.category" [checked]="true">
+            <label class="form-check-label" for="flexRadioDefault">
+                Jedlo
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="3" id="flexCheckChecked"  name="category" [(ngModel)]="transaktion.category">
+            <label class="form-check-label" for="flexCheckChecked">
+                Drogéria
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="4" id="flexCheckChecked"  name="category" [(ngModel)]="transaktion.category" >
+            <label class="form-check-label" for="flexCheckChecked">
+                Lekáreň
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="5" id="flexCheckChecked"  name="category" [(ngModel)]="transaktion.category" >
+            <label class="form-check-label" for="flexCheckChecked">
+                Bar
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="6" id="flexCheckChecked"  name="category" [(ngModel)]="transaktion.category">
+            <label class="form-check-label" for="flexCheckChecked">
+                Energie
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="7" id="flexCheckChecked"  name="category" [(ngModel)]="transaktion.category">
+            <label class="form-check-label" for="flexCheckChecked">
+                Oblečenie
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="8" id="flexCheckChecked"  name="category" [(ngModel)]="transaktion.category">
+            <label class="form-check-label" for="flexCheckChecked">
+                Vzdelávanie
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="9" id="flexCheckChecked"  name="category" [(ngModel)]="transaktion.category">
+            <label class="form-check-label" for="flexCheckChecked">
+                Príjem Zuzka 
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="10" id="flexCheckChecked"  name="category" [(ngModel)]="transaktion.category">
+            <label class="form-check-label" for="flexCheckChecked">
+                Príjem Miki
+            </label>
+          </div>
+      <div class="col-md-6">
+    <button  (click)="addTransakcion()" type="submit" class="btn btn-success" [disabled]="!transaktionForm.valid">Príjem</button>
+    <button  (click)="removeTransakcion()" type="submit" class="btn btn-danger" [disabled]="!transaktionForm.valid">Výdaj</button>
+
+
+</div></div></form>
+
+
+  <table id="transaktions" class="table">
+    <thead>
+    <tr>
+        <th scope="col">Suma</th>
+        <th scope="col">Miesto</th>
+        <th scope="col">Kategória pohybu</th>
+        <th scope="col">Kategória</th>
+
+    </tr>
+</thead>
+<tbody>
+    <tr [ngClass]="{ 'red': amount < 0, 'green': amount > 0 }" *ngFor="let budget of transaktions" >
+        <td >{{ budget.amount }}</td>
+        <td>{{ budget.location }}</td>
+        <td>{{ budget.contact }}</td>
+        <td>{{ (Category[budget.category])}}</td>
+    
+
+        
+    </tr>
+</tbody>
+  </table>
+  <button type="button" class="btn btn-primary" routerLink="/detailtransaktion">Detail pohybu na účte</button>
+  <button type="button" class="btn btn-info"  routerLink="/home" routerLinkActive="active"> Späť </button>

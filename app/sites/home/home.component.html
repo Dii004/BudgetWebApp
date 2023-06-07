@@ -1,0 +1,29 @@
+
+
+<h1>Profil užívateľa</h1>
+<table style="width:100%" class="table">
+  <tr>
+    <th scope="col">Titul</th>
+    <th scope="col">Meno</th>
+    <th scope="col">Priezvisko</th>
+    <th scope="col">Titul</th>
+    <th scope="col">Adresa</th>
+    <th scope="col">Korešpondečná adresa</th>
+    <th scope="col">Fotka</th>
+  </tr>
+  <tr *ngFor="let people of peoples, index as i" >
+    <td scope="row">{{ people.degree }}</td>
+    <td>{{ people.firstname }}</td>
+    <td>{{ people.lastname }}</td>
+    <td>{{ people.degreedr}}</td>
+    <td>{{ people.adress}}</td>
+    <td>{{ people.mailingadress}}</td>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" [src]="people.img" alt="Card image cap">
+  </div>
+
+    
+    <button type="button" class="btn btn-primary" routerLink="/update" >Upraviť</button>
+    
+  </tr>
+</table>
