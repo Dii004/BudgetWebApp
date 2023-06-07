@@ -1,0 +1,31 @@
+
+<div>
+<h1> Posielanie penazí na účet</h1>
+</div>
+
+<section class="total-budget-section">
+    <h2 class="budget"> Aktuálné peniaze: {{totalBudget}}</h2>
+    </section>
+
+<form class="row g-3" #thisForm="ngForm" (ngSubmit)="submitForm()">
+    <div class="col-md-3">
+      <label for="amount" class="form-label">Suma na odoslanie</label>
+      <input type="number" class="form-control" id="amount" name="amount"  [(ngModel)]="transaktion.amount">
+    </div>
+    <div class="col-md-3">
+      <label for="location" class="form-label">Popis</label>
+      <input type="text" class="form-control" id="location"  name="location" [(ngModel)]="transaktion.location">
+    </div>
+    <div class="col-md-3">
+        <label for="contact" class="form-label">Kontakt</label>
+        <input type="text" class="form-control" id="contact"  name="contact" [(ngModel)]="transaktion.contact">
+      </div>
+      
+      <div class="col-md-6">
+    <button type="submit" class="btn btn-danger">Poslať peniaze</button>
+
+</div></form>
+
+<app-vystupnatabulka [transaktion]="transaktions"></app-vystupnatabulka>
+
+

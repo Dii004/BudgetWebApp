@@ -1,0 +1,28 @@
+<table id="transaktions" class="table">
+    <thead>
+    <tr>
+        <th scope="col">Suma</th>
+        <th scope="col">Miesto</th>
+        <th scope="col">Kategória pohybu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transaktion of transaktion" >
+        <td >{{ transaktion.amount }}</td>
+        <td>{{ transaktion.location }}</td>
+        <td>{{ transaktion.contact }}</td>
+        <td>{{ transaktion.categoryFood ? "Výdaj" : "Príjem" }}</td>
+        <td>{{ transaktion.categoryDrogery ? "Výdaj" : "Príjem"  }}</td>
+        <td>{{ transaktion.categoryPharmacy ? "Výdaj" : "Príjem" }}</td>
+        <td>{{ transaktion.categoryBar ? "Výdaj" : "Príjem" }}</td>
+        <td>{{ transaktion.categoryEnergy ? "Výdaj" : "Príjem" }}</td>
+        <td>{{ transaktion.categoryClothes ? "Výdaj" : "Príjem" }}</td>
+        <td>{{ transaktion.categoryEducation ? "Výdaj" : "Príjem" }}</td>
+        <td>{{ transaktion.categoryPayoutZuzka ? "Výdaj" : "Príjem" }}</td>
+        <td>{{ transaktion.categoryPayoutMiki ? "Výdaj" : "Príjem" }}</td>
+  
+        
+    </tr>
+  </tbody>
+  </table>
+  

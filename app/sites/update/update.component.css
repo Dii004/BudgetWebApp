@@ -1,0 +1,15 @@
+
+
+.btn {
+    color: #000000;
+    display: block;
+    margin-top: 10px;
+    font-size: 10px;
+    height: 30px;
+    width: 100px;
+}
+
+.preview {
+    max-width: 200px;
+  }
+

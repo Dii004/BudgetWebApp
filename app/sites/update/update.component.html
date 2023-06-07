@@ -1,0 +1,75 @@
+
+
+
+<div>
+<h1> Úprava údajov</h1>
+</div>
+
+<form class="row g-3">
+    <div class="col-md-6">
+        <label for="peopleDegree" class="form-label">Id</label>
+        <input type="number" class="form-control" id="peopleId" name="degree" [(ngModel)]="People.id">
+      </div>
+    <div class="col-md-6">
+      <label for="peopleDegree" class="form-label">Titul</label>
+      <input type="text" class="form-control" id="peopleDegree" name="degree" [(ngModel)]="People.degree">
+    </div>
+    <div class="col-md-6">
+      <label for="peopleFirstname" class="form-label">Meno</label>
+      <input type="text" class="form-control" id="peopleFirstname" name="firstname" [(ngModel)]="People.firstname">
+    </div>
+    <div class="col-md-6">
+        <label for="peopleLastname" class="form-label">Priezvisko</label>
+        <input type="text" class="form-control" id="peopleLastname" name="lastname"  [(ngModel)]="People.lastname">
+      </div>
+      <div class="col-md-6">
+        <label for="peopleDegreedr" class="form-label">Titul za menom</label>
+        <input type="text" class="form-control" id="peopleDegreedr" name="degreedr" [(ngModel)]="People.degreedr">
+      </div>
+      <div class="col-md-6">
+        <label for="peopleAdress" class="form-label">Adresa</label>
+        <input type="text" class="form-control" id="peopleAdress" name="adress" [(ngModel)]="People.adress">
+      </div>
+      <div class="col-md-6">
+        <label for="peopleMailingadress" class="form-label">Korešpondečná adresa</label>
+        <input type="text" class="form-control" id="peopleMailingadress" name="mailingadress" [(ngModel)]="People.mailingadress">
+      </div>
+      <div class="card" style="width: 18rem;">        <label for="image" class="form-label">Fotka</label>
+        <img type="image" id="image"  class="card-img-top" [src]="People.img" alt="Card image cap" name="img" >
+    </div>
+
+
+
+      <div class="col-md-6">
+    <button  (click)="updatePeople()" type="submit" name="update" value="update" class="btn btn-primary">Upraviť údaje</button></div>
+  </form>
+
+
+  <table id="peoples" class="table">
+    <thead>
+    <tr>
+        <th scope="col">Titul</th>
+        <th scope="col">Meno</th>
+        <th scope="col">Priezvisko</th>
+        <th scope="col">Titul</th>
+        <th scope="col">Adresa</th>
+        <th scope="col">Korešpondečná adresa</th>
+        <th scope="col">Fotka</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let People of peoples" >
+        <td scope="row">{{ People.degree }}</td>
+        <td>{{ People.firstname }}</td>
+        <td>{{ People.lastname }}</td>
+        <td>{{ People.degreedr}}</td>
+        <td>{{ People.adress}}</td>
+        <td>{{ People.mailingadress}}</td>
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" [src]="People.img" alt="Card image cap">
+      </div>
+    
+    </tr>
+</tbody>
+  </table>
+  <button type="button" class="btn btn-info"  routerLink="/home" routerLinkActive="active"> Späť </button>
